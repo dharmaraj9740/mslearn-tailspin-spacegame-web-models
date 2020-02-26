@@ -42,3 +42,10 @@ steps:
     publishVstsFeed: 'Space Game - web - Dependencies/Tailspin.SpaceGame.Web.Models'
     allowPackageConflicts: true
   condition: succeeded()
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+    vstsFeed: '634ce95d-3057-47aa-a87b-b02ae8b101b7/8e9009be-c604-48f2-b376-7d0ee8fb8f80'
